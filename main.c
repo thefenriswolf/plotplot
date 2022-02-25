@@ -12,10 +12,9 @@
 #include <sys/stat.h>
 
 typedef struct {
-  size_t dayNumber;
   uint8_t day;
   uint8_t month;
-  uint8_t year;
+  uint32_t year;
   uint8_t hour;
   uint8_t minute;
 } day;
@@ -47,7 +46,11 @@ int main(int argc, char **argv) {
     }
   }
   day days[lines - 1];
-
+  days[0].day = 1;
+  days[0].month = 1;
+  days[0].year = 1900;
+  days[0].hour = 12;
+  days[0].minute = 0;
   if (fclose(fp) != 0) {
     printf("ERROR: could not close file %s\n", strerror(errno));
   }
