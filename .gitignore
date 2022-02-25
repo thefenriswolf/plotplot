@@ -1,0 +1,8 @@
+*.csv
+*~
+plt
+plot
+.envrc
+a.out
+tools/*
+static-analysis/*
